@@ -1,0 +1,13 @@
+{
+  "name": "base-example",
+  "description": "onecommons base example",
+  "version": "0.0.1",
+  "private": true,
+  "scripts": {
+    "start": "node app.js",
+    "test": "NODE_ENV=test mocha -R tap"
+  },
+  "dependencies": {
+    "base": "git+ssh://git@github.com/onecommons/base.git#"
+  }
+}

@@ -1,9 +1,20 @@
-var base = require(process.env.BASESRC || 'base');
+var base = require('obase');
+var app = base.createApp(__dirname, {
+  routes: {
+    //add a new route
+    index: function(req, res) {
+      res.status(200).send("my custom index route");
+    },
+    //remove a route:
+    //foo
+  }
+});
 
-var app = base.createApp(__dirname);
+//app is an express application, add additional configuration if necessary
+//e.g. app.use(...);
 
-//app.updateNamedRoutes({
-//  index: base.utils.renderer('index.html'),
-//});
-
-app.start();
+//start the app
+if (require.main === module) {
+  app.start();
+}
+module.exports = app;
